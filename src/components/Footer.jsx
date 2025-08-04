@@ -34,7 +34,7 @@ const Footer = () => (
                 <p>Reach out for collaborations or just to say hello!</p>
                 <p><i className="bx bx-envelope"></i> taranpreet.s0305@gmail.com</p>
                 <p><i className="bx bx-map"></i> New Delhi, India</p>
-                <p><i className="bx bx-globe"></i>https://taranpreet-singh.vercel.app/</p>
+                <p><i className="bx bx-globe"></i> taranpreet-singh.vercel.app/</p>
             </div>
         </div>
         <div className="footer-bottom">
