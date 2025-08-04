@@ -12,6 +12,7 @@ const Home = () => (
                 <a href="https://www.linkedin.com/in/taranpreet-singh-a44b8529a"><i className="bx bxl-linkedin"></i></a>
                 <a href="https://www.instagram.com/taranpreet_s54"><i className="bx bxl-instagram"></i></a>
                 <a href="mailto:taranpreet.s0305@gmail.com"><i className="bx bx-mail-send"></i></a>
+                <a href="https://wa.me/918700320793"><i className="bx bxl-whatsapp"></i></a>
             </div>
         </div>
     </section>
