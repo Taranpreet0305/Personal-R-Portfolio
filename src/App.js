@@ -1,25 +1,35 @@
-// src/App.jsx
-import './style.css';
-import Header from './components/Header';
-import Home from './components/Home';
-import About from './components/About';
-import Resume from './components/Resume';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './contexts/ThemeContext'
+import { AuthProvider } from './contexts/AuthContext'
+import PortfolioPage from './pages/PortfolioPage'
+import AdminLoginPage from './pages/AdminLoginPage'
+import AdminRoutes from './routes/AdminRoutes'
+import ProtectedRoute from './routes/ProtectedRoute'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
-    <>
-      <Header />
-      <Home />
-      <About />
-      <Resume />
-      <Portfolio />
-      <Contact />
-      <Footer />
-    </>
-  );
+    <BrowserRouter>
+      <ThemeProvider>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<PortfolioPage />} />
+            <Route path="/admin/login" element={<AdminLoginPage />} />
+            <Route
+              path="/admin/*"
+              element={
+                <ProtectedRoute>
+                  <AdminRoutes />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </AuthProvider>
+      </ThemeProvider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
